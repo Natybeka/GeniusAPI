@@ -1,0 +1,30 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html { 
+    background: url(../img/cover.jpg) no-repeat center center fixed; 
+    /* Compatibility with old versions */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.main-container {
+    background-image: url(../img/cover.jpg);
+    display: flex;
+    align-items: center;
+    z-index: -1;
+    
+   
+}
+
+.main-container::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+ 
+}
