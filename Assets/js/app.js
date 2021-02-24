@@ -1,3 +1,10 @@
+const submitForm = document.querySelector("#searchForm");
+const inputText = document.querySelector("#searchText");
+const lyricsView = document.querySelector("#lyrics");
+
+
+submitForm.addEventListener('submit', searchAPI);
+
 fetch("https://genius.p.rapidapi.com/search?q=Kendrick%20Lamar", {
 	"method": "GET",
 	"headers": {
