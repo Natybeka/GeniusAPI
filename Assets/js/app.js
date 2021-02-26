@@ -20,4 +20,28 @@ function searchAPI(event) {
 	}).then(res => res.json())
 	.then(jsonFormat => jsonFormat.response)
 	.then(result => console.log(result.hits))
+	.then(hits => {
+		let musicHits = hits;
+		console.log(musicHits);
+		let output = '';
+		console.log(musicHits);
+		musicHits.forEach(song => {
+			output += `
+				
+					<div class="card col-sm-3 align-items-center">
+						<img class="card-img-top" src="${song.result.header_image_url}"/>
+						<div class="card-block text-center">
+							<h5 class="card-title text-center">Title: ${song.result.title}</h5>
+							<a onclick="songSelected('${song.result.id}')" class="btn btn-sm btn-success">Lyric Details</a>
+						</div>
+					</div>
+				
+			`
+		});
+		lyricsView.innerHTML = output;
+
+	})
+	.catch((error) => {
+		console.log(error)
+	})
 }
