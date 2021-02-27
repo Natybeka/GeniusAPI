@@ -45,3 +45,10 @@ function searchAPI(event) {
 		console.log(error)
 	})
 }
+
+
+function songSelected(songID) {
+	sessionStorage.setItem('songID', songID)
+	window.location.href = './song.html';
+	return false;
+}
