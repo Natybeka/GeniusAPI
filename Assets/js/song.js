@@ -14,5 +14,12 @@ function getSong() {
                 "x-rapidapi-host": "genius.p.rapidapi.com"
             }
         }).then(res => res.json())
+        .then(jsonFormat => jsonFormat.response.song)
+        .then(song => {
+            let image = document.createElement('img');
+            console.log(song);
+            image.setAttribute('src', `${song.header_image_thumbnail_url}`)
+            albumArt.appendChild(image)
 
-}
+        })
+    }
