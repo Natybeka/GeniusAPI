@@ -1,3 +1,10 @@
+html { 
+    margin : 0px;
+    height : 100%;
+    width: 100%;
+    min-height: 100%;
+    background: url(../img/cover.jpg) no-repeat center center fixed; 
+}
 body{
     min-height: 100%;
     background-color: rgba(100, 56, 100, 0.5);
