@@ -20,6 +20,51 @@ function getSong() {
             console.log(song);
             image.setAttribute('src', `${song.header_image_thumbnail_url}`)
             albumArt.appendChild(image)
-
+            return song.description.dom.children;
         })
+        .then(children => {
+            let tags = []
+            let tagStrings = []
+            for (let index in children) {
+
+                if (children[index] == "") {
+                    continue;
+                }
+                
+                for (let i in children[index]) {
+                    var element = children[index][i];
+                    
+                    if (typeof(element) == "string") {
+                        let tag = document.createElement(element)
+                        tags.push(tag);
+                    }
+                    else {
+                        var stringTag = ""
+                        for (let k in element) {
+                            let elementProp = element[k];
+                            if (typeof(element[k]) == "string"){
+                                stringTag += element[k]
+                            }
+                            else  {
+                                for (let m in elementProp) {
+                                    var tagString = ""
+                                    // console.log(array)
+                                    if (m == "children") {
+                                        tagString += elementProp[m][0];
+                                    }   
+                                }
+                                stringTag += tagString;    
+                            }
+                        }
+                        tagStrings.push(stringTag);   
+                    }
+            
+                }
+            }
+           
+        })       
+        .catch((error) => {
+            console.log(error)
+        })
+
     }
