@@ -1,6 +1,7 @@
 const songView = document.querySelector("#songLyrics");
 const albumArt = document.querySelector('#image-container');
 const songLyrics = document.querySelector("#lyrics-container");
+const songButton=document.querySelector('#button-container');
 
 document.addEventListener('DOMContentLoaded', getSong);
 function getSong() { 
@@ -20,6 +21,13 @@ function getSong() {
             console.log(song);
             image.setAttribute('src', `${song.header_image_thumbnail_url}`)
             albumArt.appendChild(image)
+
+            let buttonn = document.createElement('a')
+            buttonn.setAttribute('href', `${song.url}`)
+            buttonn.setAttribute('class', `btn btn-info center}`)
+            buttonn.innerHTML="GO TO SONG"
+            console.log(buttonn)
+            songButton.appendChild(buttonn)
             return song.description.dom.children;
         })
         .then(children => {
