@@ -18,3 +18,8 @@ body{
 nav a {
     color: rgba(190, 240, 198, 0.9);
 }
+@media(min-width:960px) {
+    #lyrics img{
+        height: 240px;
+    
+    }
