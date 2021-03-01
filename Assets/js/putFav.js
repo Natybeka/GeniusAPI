@@ -23,6 +23,19 @@ function putFavourites() {
         }).then(res => res.json())
         .then(jsonFormat => jsonFormat.response)
         .then(response => response.song)
+        .then(song => { 
+            console.log(song);
+            output += `
+
+                    <div class="card col-sm-3 align-items-center">
+                        <img class="card-img-top" src="${song.header_image_url}"/>
+                        <div class="card-block text-center">
+                            <h5 class="card-title text-center">Title: ${song.title}</h5>
+                        </div>
+                    </div>
+                `
+                favSongs.innerHTML = output;
+        })
         .catch((error) => {
             console.log(error)
         });
