@@ -33,3 +33,6 @@ nav a {
 #lyrics .card {
     color: white;
 }
+#lyrics img{
+    width: 100%;
+}
