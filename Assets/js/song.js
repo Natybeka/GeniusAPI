@@ -61,7 +61,16 @@ function getSong() {
             
                 }
             }
-           
+            let output = ``;
+            tags.forEach((value, index) => {
+                value.innerHTML = tagStrings[index];
+            })
+
+            tags.forEach((value, index) => {
+                songLyrics.appendChild(value);
+            })
+
+           console.log(children)
         })       
         .catch((error) => {
             console.log(error)
