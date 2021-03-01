@@ -23,3 +23,13 @@ nav a {
         height: 240px;
     
     }
+    #lyrics .card {
+        height: 390px;
+    } 
+    
+
+}
+
+#lyrics .card {
+    color: white;
+}
