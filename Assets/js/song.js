@@ -3,6 +3,8 @@ const albumArt = document.querySelector('#image-container');
 const songLyrics = document.querySelector("#lyrics-container");
 const songButton=document.querySelector('#button-container');
 
+
+
 document.addEventListener('DOMContentLoaded', getSong);
 function getSong() { 
     let songID = sessionStorage.getItem('songID');
