@@ -43,3 +43,15 @@ function putFavourites() {
         });
     });   
 }
+
+function removeSong(songID){
+    let songs = JSON.parse(localStorage.getItem('favSongs'));
+    // console.log(songID);
+    let index = songs.indexOf(songID);
+    console.log(index);
+    let newSongs = remover(songs, index);
+    console.log(newSongs);
+    localStorage.setItem('favSongs', JSON.stringify(newSongs))
+
+    location.reload();
+}
