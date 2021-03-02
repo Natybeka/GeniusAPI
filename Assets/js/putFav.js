@@ -52,6 +52,12 @@ function removeSong(songID){
     let newSongs = remover(songs, index);
     console.log(newSongs);
     localStorage.setItem('favSongs', JSON.stringify(newSongs))
-
+    
     location.reload();
+}
+function remover(array, index){
+    if (array.length == 1)
+        return [];
+    return array.slice(0, index).concat(array.slice(index + 1, array.length));
+
 }
