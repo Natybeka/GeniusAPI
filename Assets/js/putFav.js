@@ -31,6 +31,8 @@ function putFavourites() {
                         <img class="card-img-top" src="${song.header_image_url}"/>
                         <div class="card-block text-center">
                             <h5 class="card-title text-center">Title: ${song.title}</h5>
+                            <a onclick="songSelected('${song.id}')" class="btn btn-sm btn-success">Lyric Details</a>
+                            <a onclick="removeSong('${song.id}')" class="btn btn-sm btn-success">Remove From Favourite</a>
                         </div>
                     </div>
                 `
