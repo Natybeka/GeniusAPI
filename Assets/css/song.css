@@ -12,3 +12,11 @@ body{
 #image-container{
     padding: 2rem;
 }
+#title-container{
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-top: -2rem;
+    padding-right: 11.75rem;
+    margin-left: 0.7rem;
+    background-color: rgba(25, 25, 44, 0.4);
+}
