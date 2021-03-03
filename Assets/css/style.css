@@ -18,12 +18,21 @@ body{
 nav a {
     color: rgba(190, 240, 198, 0.9);
 }
+.nav-item{
+    top: 50px;
+    font-size: large;
+}
+#navigation{
+    margin-top: 13px;
+}
+
 @media(min-width:960px) {
-    #lyrics img{
+    #lyrics img, #favSongs img{
         height: 240px;
     
     }
-    #lyrics .card {
+    
+    #lyrics .card #favSongs .card{
         height: 390px;
     } 
     
