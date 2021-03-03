@@ -52,3 +52,20 @@ function songSelected(songID) {
 	window.location.href = './song.html';
 	return false;
 }
+
+function addToFavourite(songID) {
+
+	let storage;
+	let result;
+	if ( result = localStorage.getItem('favSongs')) {
+		storage = JSON.parse(result)
+		storage.push(songID);
+		localStorage.setItem('favSongs', JSON.stringify(storage));
+	}
+	else {
+		storage = []
+		storage.push(songID);
+		localStorage.setItem('favSongs', JSON.stringify(storage));
+	}
+	
+}
