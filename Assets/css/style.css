@@ -38,8 +38,26 @@ nav a {
     
 
 }
+#lyrics .card , #favSongs .card{
+    color: white;
+}
 
-#lyrics .card {
+#lyrics img, #favSongs img{
+    width: 100%;
+}
+
+#searchForm{
+    position: relative;
+}
+#spinner{
+    position: absolute;
+    top: 20%;
+    left: 95%;
+    padding: 2px;
+    display: none;
+}
+/* Toast */
+#lyrics .card , #favsongs .c{
     color: white;
 }
 #lyrics img{
