@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeniusAPI Manipulation</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
@@ -18,6 +20,9 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#"> GeniusAPI</a>
                 </div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="favourite.html">Favourites</a>
+                </div> 
             </div>
         </nav>
 
@@ -25,10 +30,16 @@
             <div class="jumbotron">
                 <h3 class="text-center">Search for any Lyric</h3>
                 <form id="searchForm">
+                    <div class="ui small text loader" id="spinner"></div>
                     <input type="text" class="form-control" id="searchText" placeholder="Search Music here..">
                 </form>
             </div>
         </div>
+
+        <div id="snackbar">Loaded Successfully</div>
+        <div id="favsnackbar">Added to Favorites</div>
+        
+        <div id="retrysnackbar">Failed to load search. Try Again!</div>
        
         <!-- result is stored here -->
         <div class="container">

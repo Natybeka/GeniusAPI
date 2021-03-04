@@ -2,6 +2,7 @@
 putFavourites();
 const favSongs = document.querySelector("#favSongs");
 function putFavourites() {
+
     let favSong;
     if(localStorage.getItem('favSongs')){
         favSong = JSON.parse(localStorage.getItem('favSongs'));
@@ -10,8 +11,11 @@ function putFavourites() {
     // console.log(favSong[0]);
     let output = '';
     if(favSong.length === 0){
+        document.getElementById('empty-case').style.display = 'block';
         return;
     }
+    document.getElementById('empty-case').style.display = 'none';
+    
     favSong.forEach(songs => {
         // fetch data
         fetch("https://genius.p.rapidapi.com/songs/"+songs, {
@@ -37,8 +41,10 @@ function putFavourites() {
                     </div>
                 `
                 favSongs.innerHTML = output;
+              
         })
         .catch((error) => {
+            
             console.log(error)
         });
     });   
@@ -46,6 +52,7 @@ function putFavourites() {
 
 function removeSong(songID){
     let songs = JSON.parse(localStorage.getItem('favSongs'));
+    myFunction("remsnackbar");
     // console.log(songID);
     let index = songs.indexOf(songID);
     console.log(index);
@@ -53,11 +60,24 @@ function removeSong(songID){
     console.log(newSongs);
     localStorage.setItem('favSongs', JSON.stringify(newSongs))
     
-    location.reload();
+    setTimeout(() =>  location.reload(), 500);
 }
+
+function songSelected(songID) {
+	sessionStorage.setItem('songID', songID)
+	window.location.href = './song.html';
+	return false;
+}
+
 function remover(array, index){
     if (array.length == 1)
         return [];
     return array.slice(0, index).concat(array.slice(index + 1, array.length));
 
+}
+
+function myFunction(id) {
+	var x = document.getElementById(id);
+	x.className = "show";
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }

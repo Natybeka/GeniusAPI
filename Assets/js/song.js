@@ -27,15 +27,22 @@ function getSong() {
 
             let title = document.createElement('p');
             console.log(song);
-            title.innerHTML=(`${song.title}`)
-            songTitle.appendChild(title)
+            title.innerHTML=(`${song.title}`);
+            songTitle.appendChild(title);
 
-            let buttonn = document.createElement('a')
-            buttonn.setAttribute('href', `${song.url}`)
-            buttonn.setAttribute('class', `btn btn-info center}`)
-            buttonn.innerHTML="GO TO LYRICS"
-            console.log(buttonn)
-            songButton.appendChild(buttonn)
+            let buttonn = document.createElement('a');
+            buttonn.setAttribute('href', `${song.url}`);
+            buttonn.setAttribute('target', "_blank");
+            buttonn.setAttribute('class', `btn btn-info center}`);
+            buttonn.innerHTML="GO TO LYRICS";
+
+            let buttonn2 = document.createElement('a');
+            buttonn2.setAttribute('href', `./index.html`);
+            buttonn2.setAttribute('class', `btn btn-info center}`);
+            buttonn2.style.marginTop = "10px";
+            buttonn2.innerHTML="BACK TO SEARCH";
+            songButton.appendChild(buttonn);
+            songButton.appendChild(buttonn2);
             return song.description.dom.children;
         })
         .then(children => {
